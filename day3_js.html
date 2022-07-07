@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h3>1. Let and Const - What's the Difference?</h3>
+        <p> const MAX_SIZE = 25 * 1024 * 1024;
+            let title = 'Hello World';
+            title = 'Hello ES6'<br>
+            -Let <br>
+            +Cho phép chúng ta cập nhật giá trị của biến chứ không cho phép chúng ta tái khái báo lại biến đó
+            +Nếu chúng ta sử dụng biến let trước khi khai báo thì sẽ gặp lỗi <br>
+            -Const <br>
+            +nếu trường hợp kiểu của biến là primitive  thì chúng ta sẽ không thể tái khai báo hay cập nhật giá trị mới để thay thế cho giá trị trước đó của biến
+            +Đối với trường hợp kiểu biến là reference (bao gồm object, array, và function) thì tuy không thể tái khai báo hay cập nhật giá trị của biến nhưng chúng ta vẫn có thể cập nhật giá trị cho thuộc tính của biến đó.
+        </p>
+    </section>
+    <section>
+        <h3>2. String Interpolation</h3><br>
+        <p>const user = { name: 'David' };
+            const card = { amount: 7, product: "Bar", unitprice: 42 };
+            const message = `Hello ${user.name},\nwant to buy ${card.amount} ${card.product} for\na total of ${card.amount * card.unitprice} bucks?`;</p>
+    </section>
+    <section>
+        <h3>3. Rest Parameter</h3><br>
+        <p> function foo(x, y) {
+            const a = Array.prototype.slice.call(arguments, 2);
+            return (x + y) * a.length;
+          };
+          foo(1, 2, 'hello', true, 7) === 9;</p>
+    </section>
+    <section>
+        <h3>4. Default Parameter Values</h3><br>
+        <p>function sum(x, y, z) {
+            if (y === undefined) {
+              y = 7;
+            }
+            if (z === undefined) {
+              z = 42;
+            }
+            return x + y + z;
+          };</p>
+    </section>
+    <section>
+        <h3>5. Arrow Functions</h3><br>
+        <p>const evens = [1, 2, 3, 4, 5, 6];
+            const odds = evens.map(v => { return v + 1; });
+            const pairs = evens.map(v => { return { even: v, odd: v + 1 }; });
+            const nums = evens.map((v, i) => { return v + i; });
+            const fives = [];
+            nums.forEach(v => 
+            {
+              if (v % 5 === 0)
+               {
+                fives.push(v);
+              }
+            });
+        </p>
+    </section>
+    <section>
+        <h3>6. Classes</h3><br>
+        <p>const Shape = function (id, x, y) {
+            this.id = id;
+            this.move(x, y);
+          };
+          Shape.prototype.move = function (x, y) {
+            this.x = x;
+            this.y = y;
+          };</p>
+    </section>
+    <section>
+        <h3>7. Modules</h3><br>
+        <p>Utils = {};
+            Utils.sum = (x, y) => { return x + y };
+            Utils.pi = 3.141593;
+            const math = Utils;
+            console.log(`2π = ${math.sum(math.pi, math.pi)}`);
+            const sum = Utils.sum, pi = Utils.pi;
+            console.log(`2π = ${sum(pi, pi)}`);</p>
+    </section>
+    <section>
+        <h3>8. Promise</h3><br>
+        <p>  function showMessAfterTimeout(msg, who, timeout, onDone) {
+            setTimeout(() => {
+              onDone(`${msg} Hi ${who}!`);
+            }, timeout);
+          }
+          showMessAfterTimeout('', 'Foo', 100, msg => {
+            showMessAfterTimeout(msg, 'Bar', 200, msg => {
+              console.log(`Finish after 300ms:${msg}`);
+            });
+          });
+        </p>
+    </section>
+    <section>
+        <h3>9.Loops-Give an example for each method: </h3>
+        <p>-For..of:  <br>
+        + const yasb = ["TH", "TM", "HM"];
+
+            let text = "";
+            for (let x of yasb) {
+              text += x + "<br>";
+            } <br>
+            -FindIndex: <br>
+        + var cm = [12, 4, 7, 9];
+        document.getElementById("demo").innerHTML = scores;
+        function KTrCm(cm) 
+        {
+            return cm <= 5;
+        }
+         function myFunction() {
+            document.getElementById("demo").innerHTML = cm.findIndex(KTrCm);
+        }
+    </p>
+    </section>
+    
+</body>
+</html>
